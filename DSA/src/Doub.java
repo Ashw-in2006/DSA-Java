@@ -15,7 +15,7 @@ class DLL {
     Node head;
 
     // Insert at END (your insert logic)
-    public void insert(int val) {
+    public void input(int val) {
         Node newNode = new Node(val);
 
         if (head == null) {
@@ -41,7 +41,7 @@ class DLL {
             head.prev = n;
         }
 
-        head = n;
+        head = n; 
     }
 
     // DELETE FIRST
@@ -128,6 +128,22 @@ class DLL {
         }
         System.out.println("null");
     }
+
+    // DISPLAY BACKWARD
+    public void printback(){
+        if(head==null){
+            System.out.println("No val");
+            return;
+        }
+        Node curr = head;
+        while(curr!=null){
+            curr = curr.next;
+        }
+        while(curr!=null){
+            System.out.println(curr.data+" ");
+            curr= curr.prev;
+        }
+    }
 }
 
 
@@ -143,13 +159,13 @@ public class Doub {
 
         System.out.println("Enter values:");
         for (int i = 0; i < n; i++) {
-            list.insert(sc.nextInt());
+            list.input(sc.nextInt());
         }
 
         int choice = -1;
 
         while (choice != 0) {
-
+            
             choice = sc.nextInt();
 
             if (choice == 1) {
@@ -165,6 +181,9 @@ public class Doub {
             }
             else if (choice == 4) {
                 list.print();
+            }
+            else if(choice == 5){
+                list.printback();
             }
             else if (choice == 0) {
                 System.out.println("Exiting...");
