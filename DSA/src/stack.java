@@ -49,8 +49,9 @@ public class stack {
             int a = sc.nextInt();
             num.push(a);
         }
-        num.display();
-        num.peek();
-        num.pop();
+        
+        // num.display();
+        // num.peek();
+        // num.pop();
     }
 }
